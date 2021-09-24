@@ -43,5 +43,10 @@ public class Cells : MonoBehaviour
         tmpTower.GetComponent<Tower>().selfType = (TowerType)tower.type;
         hasTower = true;
         FindObjectOfType<Shop>().CloseShop();
+    }
+
+    void Start()
+    {
+        Debug.Log("help");
     }    
 }
