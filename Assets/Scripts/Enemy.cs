@@ -15,6 +15,7 @@ public class Enemy : MonoBehaviour
     {
         getWayPoints();
         hp = selfEnemy.Health;
+        Debug.Log("commit");
     }
 
     void Update()
