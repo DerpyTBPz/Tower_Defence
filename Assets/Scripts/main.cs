@@ -60,6 +60,7 @@ public class main : MonoBehaviour
     private void Awake()
     {        
         AllTowers.Add(new Towers(0, 2, .3f, "TowerSpr/greenTower", 30, "Machine Gun Tower"));
+        AllTowers.Add(new Towers(1, 10, .5f, "TowerSpr/orangeTower", 50, "Sniper Tower"));
         AllProjectiles.Add(new TowerProjectiles(7, 10, "ProjectilesSpr/greenTowerProj"));
         AllProjectiles.Add(new TowerProjectiles(10, 30, "ProjectilesSpr/orangeTowerProj"));
         AllEnemys.Add(new Enemys(30, 3, "EnemySpr/simpleEnemy"));
