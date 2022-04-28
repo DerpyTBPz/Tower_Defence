@@ -7,6 +7,9 @@ public class Spawner : MonoBehaviour
 {
 
     main mainScr;
+
+    Enemys selfEnemy;
+
     public float timeToSpawn = 10;
     public int spawnCount = 0;
     public GameObject enemyPref, wayPointParent;
@@ -20,10 +23,12 @@ public class Spawner : MonoBehaviour
     {
         spawnCount++;
         for (int i = 0; i < enemyCount; i++)
-        {            
+        {
+            int tmpEnemySpr = Random.Range(0, mainScr.AllEnemys.Count);            
             GameObject tmpEnemy = Instantiate(enemyPref);
             tmpEnemy.transform.SetParent(gameObject.transform, false);            
-            tmpEnemy.GetComponent<Enemy>().selfEnemy = mainScr.AllEnemys[Random.Range(0, mainScr.AllEnemys.Count)];
+            tmpEnemy.GetComponent<Enemy>().selfEnemy = mainScr.AllEnemys[tmpEnemySpr];            
+            tmpEnemy.GetComponent<SpriteRenderer>().sprite = mainScr.AllEnemys[tmpEnemySpr].Spr;
             tmpEnemy.GetComponent<Enemy>().wayPointsParent = wayPointParent;
             yield return new WaitForSeconds(0.4f);
         }

@@ -47,25 +47,45 @@ public class Save : MonoBehaviour
         dbconn = null;
     }
 
+    IEnumerator FlashingText()
+    {        
+        GameObject.Find("Placeholder").GetComponent<Text>().color = Color.red;
+        yield return new WaitForSeconds(.1f);
+        GameObject.Find("Placeholder").GetComponent<Text>().color = Color.yellow;
+        
+    }
+
     public void SaveBtn()
     {
-        ReadDB();
-        k++;
         inpTxt = NameTxt.text;
-        string conn = "URI=file:" + Application.dataPath + "/StreamingAssets/db.bytes";
-        IDbConnection dbconn = (IDbConnection)new SqliteConnection(conn);
-        dbconn.Open();
-        IDbCommand dbcmd = dbconn.CreateCommand();
-        string sqlQuery = "INSERT INTO LeaderBoard (player_id, Nickname, Score) VALUES ("+k+ ", '"+inpTxt+"', "+Money.Instance.endScore+")";
-        dbcmd.CommandText = sqlQuery;
-        dbcmd.ExecuteNonQuery();
-        dbcmd.Dispose();
-        dbcmd = null;
-        dbconn.Close();
-        dbconn = null;
-        Destroy(GameObject.Find("LosePanelPref"));
-        Destroy(GameObject.Find("LosePanelPref(Clone)"));
-        Money.Instance.ToLeaderBoard();       
+
+        if (inpTxt != "")
+        {
+            ReadDB();
+            k++;        
+            string conn = "URI=file:" + Application.dataPath + "/StreamingAssets/db.bytes";
+            IDbConnection dbconn = (IDbConnection)new SqliteConnection(conn);
+            dbconn.Open();
+            IDbCommand dbcmd = dbconn.CreateCommand();
+            string sqlQuery = "INSERT INTO LeaderBoard (player_id, Nickname, Score) VALUES ("+k+ ", '"+inpTxt+"', "+Money.Instance.endScore+")";
+            dbcmd.CommandText = sqlQuery;
+            dbcmd.ExecuteNonQuery();
+            dbcmd.Dispose();
+            dbcmd = null;
+            dbconn.Close();
+            dbconn = null;
+            Destroy(GameObject.Find("LosePanelPref"));
+            Destroy(GameObject.Find("LosePanelPref(Clone)"));
+            Money.Instance.ToLeaderBoard();   
+        }
+        else
+        {
+            for (int i = 0; i < 5; i++)
+            {
+                StartCoroutine(FlashingText());
+            }           
+            // GameObject.Find("Placeholder").GetComponent<Text>().color = Color.cyan;
+        }    
     }
 }
 
