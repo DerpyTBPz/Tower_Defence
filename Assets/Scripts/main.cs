@@ -9,6 +9,7 @@ public struct Towers
     public int Price, type;
     public float range, Cooldown, CurrCooldown;
     public Sprite Spr;
+
     public Towers(int type, float range, float cd, string path, int Price, string Name)
     {
         this.Price = Price;
@@ -57,12 +58,16 @@ public class main : MonoBehaviour
     public List<Towers> AllTowers = new List<Towers>();
     public List<TowerProjectiles> AllProjectiles = new List<TowerProjectiles>();
     public List<Enemys> AllEnemys = new List<Enemys>();
+    
     private void Awake()
-    {        
-        AllTowers.Add(new Towers(0, 2, .3f, "TowerSpr/greenTower", 30, "Machine Gun Tower"));
+    { 
+        AllTowers.Add(new Towers(0, 2.3f, .3f, "TowerSpr/greenTower", 30, "Machine Gun Tower"));
+        AllTowers.Add(new Towers(1, 5, 1.5f, "TowerSpr/orangeTower", 100, "Sniper Tower"));
+        
         AllProjectiles.Add(new TowerProjectiles(7, 10, "ProjectilesSpr/greenTowerProj"));
         AllProjectiles.Add(new TowerProjectiles(10, 30, "ProjectilesSpr/orangeTowerProj"));
-        AllEnemys.Add(new Enemys(30, 3, "EnemySpr/simpleEnemy"));
-        AllEnemys.Add(new Enemys(60, 1, "EnemySpr/heavyEnemy"));        
+
+        AllEnemys.Add(new Enemys(30, 3, "EnemySpr/heavyEnemy"));
+        AllEnemys.Add(new Enemys(60, 1, "EnemySpr/simpleEnemy"));        
     }
 }
