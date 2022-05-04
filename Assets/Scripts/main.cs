@@ -67,7 +67,7 @@ public class main : MonoBehaviour
         AllProjectiles.Add(new TowerProjectiles(7, 10, "ProjectilesSpr/greenTowerProj"));
         AllProjectiles.Add(new TowerProjectiles(10, 30, "ProjectilesSpr/orangeTowerProj"));
 
-        AllEnemys.Add(new Enemys(30, 3, "EnemySpr/heavyEnemy"));
-        AllEnemys.Add(new Enemys(60, 1, "EnemySpr/simpleEnemy"));        
+        AllEnemys.Add(new Enemys(30, 3, "EnemySpr/simpleEnemy"));
+        AllEnemys.Add(new Enemys(60, 1, "EnemySpr/heavyEnemy"));        
     }
 }
