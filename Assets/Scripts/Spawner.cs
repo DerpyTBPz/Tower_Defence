@@ -24,12 +24,13 @@ public class Spawner : MonoBehaviour
         spawnCount++;
         for (int i = 0; i < enemyCount; i++)
         {
-            int tmpEnemySpr = Random.Range(0, mainScr.AllEnemys.Count);            
+            int tmpEnemyCount = Random.Range(0, mainScr.AllEnemys.Count);
             GameObject tmpEnemy = Instantiate(enemyPref);
-            tmpEnemy.transform.SetParent(gameObject.transform, false);            
-            tmpEnemy.GetComponent<Enemy>().selfEnemy = mainScr.AllEnemys[tmpEnemySpr];            
-            tmpEnemy.GetComponent<SpriteRenderer>().sprite = mainScr.AllEnemys[tmpEnemySpr].Spr;
+            tmpEnemy.transform.SetParent(gameObject.transform, false);
+            tmpEnemy.GetComponent<Enemy>().selfEnemy = mainScr.AllEnemys[tmpEnemyCount];            
+            tmpEnemy.GetComponent<SpriteRenderer>().sprite = mainScr.AllEnemys[tmpEnemyCount].Spr;
             tmpEnemy.GetComponent<Enemy>().wayPointsParent = wayPointParent;
+            tmpEnemy.GetComponent<Enemy>().isHeli = mainScr.AllEnemys[tmpEnemyCount].isHeli;
             yield return new WaitForSeconds(0.4f);
         }
     }    

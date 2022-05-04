@@ -53,7 +53,14 @@ public class Tower : MonoBehaviour
             }
             if (nearestEnemy != null)
             {
-                Shoot(nearestEnemy);
+                if ((nearestEnemy.GetComponent<Enemy>().isHeli == true) && (selfTower.isAntiAir == true))
+                {
+                    Shoot(nearestEnemy);
+                }
+                if ((nearestEnemy.GetComponent<Enemy>().isHeli == false) && (selfTower.isAntiAir == false))
+                {
+                    Shoot(nearestEnemy);
+                } 
             }
         }
     }

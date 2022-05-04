@@ -9,8 +9,9 @@ public struct Towers
     public int Price, type;
     public float range, Cooldown, CurrCooldown;
     public Sprite Spr;
+    public bool isAntiAir;
 
-    public Towers(int type, float range, float cd, string path, int Price, string Name)
+    public Towers(int type, float range, float cd, string path, int Price, string Name, bool Air)
     {
         this.Price = Price;
         this.Name = Name;
@@ -19,6 +20,7 @@ public struct Towers
         this.type = type;
         Spr = Resources.Load<Sprite>(path);
         CurrCooldown = 0;
+        this.isAntiAir = Air;
     }
 }
 
@@ -45,11 +47,13 @@ public struct Enemys
 {
     public float Health, Speed;
     public Sprite Spr;
-    public Enemys(float health, float speed, string sprPath)
+    public bool isHeli;
+    public Enemys(float health, float speed, string sprPath, bool Heli)
     {
         Health = health;
         Speed = speed;
         Spr = Resources.Load<Sprite>(sprPath);
+        isHeli = Heli;
     }
 }
 
@@ -61,13 +65,16 @@ public class main : MonoBehaviour
     
     private void Awake()
     { 
-        AllTowers.Add(new Towers(0, 2.3f, .3f, "TowerSpr/greenTower", 30, "Machine Gun Tower"));
-        AllTowers.Add(new Towers(1, 5, 1.5f, "TowerSpr/orangeTower", 100, "Sniper Tower"));
+        AllTowers.Add(new Towers(0, 2.3f, .3f, "TowerSpr/greenTower", 30, "Machine Gun Tower", false));
+        AllTowers.Add(new Towers(1, 5, 1.5f, "TowerSpr/orangeTower", 100, "Sniper Tower", false));
+        AllTowers.Add(new Towers(2, 3.5f, 1, "TowerSpr/blueTower", 50, "Air Defense Tower", true ));
         
         AllProjectiles.Add(new TowerProjectiles(7, 10, "ProjectilesSpr/greenTowerProj"));
         AllProjectiles.Add(new TowerProjectiles(10, 30, "ProjectilesSpr/orangeTowerProj"));
+        AllProjectiles.Add(new TowerProjectiles(8, 20, "ProjectilesSpr/blueTowerProj"));
 
-        AllEnemys.Add(new Enemys(30, 3, "EnemySpr/simpleEnemy"));
-        AllEnemys.Add(new Enemys(60, 1, "EnemySpr/heavyEnemy"));        
+        AllEnemys.Add(new Enemys(30, 3, "EnemySpr/simpleEnemy", false));
+        AllEnemys.Add(new Enemys(60, 1, "EnemySpr/heavyEnemy", false));
+        AllEnemys.Add(new Enemys(50, 1, "EnemySpr/heliEnemy", true));          
     }
 }

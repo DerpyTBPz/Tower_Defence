@@ -10,6 +10,7 @@ public class Enemy : MonoBehaviour
     public GameObject wayPointsParent;
     int wayIndex = 0;
     float hp;
+    public bool isHeli;
 
     private void Start()
     {
