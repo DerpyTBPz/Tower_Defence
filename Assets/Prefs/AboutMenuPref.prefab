@@ -260,8 +260,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -249.9, y: 61.66}
-  m_SizeDelta: {x: 350.25925, y: 123.31969}
+  m_AnchoredPosition: {x: -231.69601, y: 48.65713}
+  m_SizeDelta: {x: 386.6672, y: 149.3254}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &436049755383101715
 CanvasRenderer:
@@ -293,7 +293,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 6885f0abf711ad942971bea884ec4770, type: 3}
-    m_FontSize: 21
+    m_FontSize: 23
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 10
@@ -524,11 +524,11 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 6885f0abf711ad942971bea884ec4770, type: 3}
-    m_FontSize: 40
+    m_FontSize: 43
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 10
-    m_MaxSize: 42
+    m_MaxSize: 46
     m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -536,9 +536,9 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "\u0414\u0438\u043F\u043B\u043E\u043C\u043D\u0438\u0439 \u043F\u0440\u043E\u0435\u043A\u0442
-    \u043D\u0430 \u0442\u0435\u043C\u0443: \"\u041F\u0440\u043E\u0433\u0440\u0430\u043C\u043D\u0430
-    \u0440\u0435\u0430\u043B\u0456\u0437\u0430\u0446\u0456\u044F \u0430\u043B\u0433\u043E\u0440\u0438\u0442\u043C\u0443
-    \u0433\u0440\u0438 \u0443 \u0436\u0430\u043D\u0440\u0456 \"Tower Defence\"\""
+    \u043D\u0430 \u0442\u0435\u043C\u0443: \"\u0420\u043E\u0437\u0440\u043E\u0431\u043A\u0430
+    \u043A\u043E\u043C\u043F'\u044E\u0442\u0435\u0440\u043D\u043E\u0457 \u0433\u0440\u0438
+    \u0443 \u0436\u0430\u043D\u0440\u0456 \"Tower Defense\"\""
 --- !u!114 &1054145279445663739
 MonoBehaviour:
   m_ObjectHideFlags: 0
