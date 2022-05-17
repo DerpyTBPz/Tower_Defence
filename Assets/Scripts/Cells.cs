@@ -24,7 +24,7 @@ public class Cells : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (!isGround && FindObjectsOfType<Shop>().Length == 0 && !isRock && Money.Instance.canSpawn == true)
+        if (!isGround && FindObjectsOfType<Shop>().Length == 0 && !isRock && Money.Instance.canSpawn == true && FindObjectOfType<Money>().EscMenuOn == false)
         {
             if (!hasTower)
             {

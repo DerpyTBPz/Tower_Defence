@@ -65,9 +65,9 @@ public class main : MonoBehaviour
     
     private void Awake()
     { 
-        AllTowers.Add(new Towers(0, 2.3f, .3f, "TowerSpr/greenTower", 30, "Machine Gun Tower", false));
-        AllTowers.Add(new Towers(1, 5, 1.5f, "TowerSpr/orangeTower", 100, "Sniper Tower", false));
-        AllTowers.Add(new Towers(2, 3.5f, 1, "TowerSpr/blueTower", 50, "Air Defense Tower", true ));
+        AllTowers.Add(new Towers(0, 1.95f, .45f, "TowerSpr/greenTower", 30, "Machine Gun Tower", false));
+        AllTowers.Add(new Towers(1, 5.5f, 1.75f, "TowerSpr/orangeTower", 100, "Sniper Tower", false));
+        AllTowers.Add(new Towers(2, 2.75f, 1, "TowerSpr/blueTower", 50, "Air Defense Tower", true ));
         
         AllProjectiles.Add(new TowerProjectiles(7, 10, "ProjectilesSpr/greenTowerProj"));
         AllProjectiles.Add(new TowerProjectiles(10, 30, "ProjectilesSpr/orangeTowerProj"));
